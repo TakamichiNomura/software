@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class Book here.
  *
@@ -14,6 +14,8 @@ public class Book
         this.title = title;
         this.auther = auther;
         this.catalogueNumber = catalogNumber;
+        Set<String> settitle = new TreeSet<>();
+        settitle.add(title);
         
     }
     public void Display(){
