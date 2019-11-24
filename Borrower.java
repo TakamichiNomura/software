@@ -24,11 +24,12 @@ public class Borrower
         library = new Library();
         library.FindBook(catalognumber);
     }
-    public void BorrowBook(Book book){
+    public void BorrowBook(int catalogNumber,Book book){
         library = new Library();
-        library.LendOneBook(book);
+        library.LendOneBook(catalogNumber,book);
     }
-    public void RetrunBook(Book book){
-        
+    public void RetrunBook(int catalogNumber,Book book){
+        library = new Library(); 
+        library.RetrunOneBook(catalogNumber,book);
     }
 }

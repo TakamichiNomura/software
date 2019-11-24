@@ -9,10 +9,16 @@ public class Loan
 {
     private Book book;
     static LinkedList<Book> booklist = new LinkedList<Book>();
-    public void LendOneBook(Book book){
-        booklist.add(book);
+    public void LendOneBook(int catalogNumber,Book book){
+        booklist.add(catalogNumber,book);
     }
-    public void ReturnOneBook(Book book){
-        
+    public void ReturnOneBook(int catalogNumber,Book book){
+        Iterator<Book> iterator = booklist.iterator();
+        while(iterator.hasNext()){
+            if(book == iterator.next()){
+                booklist.remove(catalogNumber);
+                break;
+            }
+        }
     }
 }

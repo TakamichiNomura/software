@@ -10,7 +10,8 @@ public class Book
     private int catalogNumber;
     private String auther;
     private String title;
-    static TreeSet<Integer> number = new TreeSet<Integer>();
+    static HashSet<Integer> number = new HashSet<Integer>();
+    static TreeSet<String> borrowername = new TreeSet<String>();
     static LinkedList<Book> booklist = new LinkedList<Book>();
     public Book(){}
     public Book(String auther,String title){
@@ -25,13 +26,19 @@ public class Book
         
     }
     public void getBorrower(){
-        
+        Borrower borrower = new Borrower();
+        Iterator<String> iterator = borrower.setname.iterator();
+        while(iterator.hasNext()){
+            
+        }
     }
-    public void attachBorrower(){
-        
+    public void attachBorrower(String name){
+        this.auther = name;
+        borrowername.add(this.auther);
     }
-    public void detachBorrower(){
-        
+    public void detachBorrower(String name){
+        this.auther = name;
+        borrowername.remove(this.auther);
     }
     public Book compareTo(Book book){
         Iterator<Book> iterator = booklist.iterator();

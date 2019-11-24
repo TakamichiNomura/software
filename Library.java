@@ -33,13 +33,15 @@ public class Library
     public void DisplayBooksOnLoan(){
         
     }
-    public void LendOneBook(Book book){
+    public void LendOneBook(int catalogNumber,Book book){
         book = new Book();
         Loan loan = new Loan();
-        loan.LendOneBook(book);
+        loan.LendOneBook(catalogNumber,book);
     }
-    public void ReturnOneBook(int catalogNumber){
-        
+    public void RetrunOneBook(int catalogNumber,Book book){
+        book = new Book();
+        Loan loan = new Loan();
+        loan.ReturnOneBook(catalogNumber,book);
     }
     public void FindBook(int catalogNumber){
         book = new Book(); 
