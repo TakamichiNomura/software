@@ -11,6 +11,9 @@ public class Book
     private String auther;
     private String title;
     public void Add(String title,String auther,int catalogNumber){
+        this.title = title;
+        this.auther = auther;
+        this.catalogueNumber = catalogNumber;
         
     }
     public void Display(){

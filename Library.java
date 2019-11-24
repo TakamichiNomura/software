@@ -9,10 +9,11 @@ public class Library
 {
     private String name;
     public String RegisterOneBorrower(String name){
-        
+        this.name = name;
+        return this.name;
     }
     public void requestOneBorrower(String name){
-        
+        this.name = name;
     }
     public void RegisterOneBook(String title,String auther,int catalogNumber){
         
