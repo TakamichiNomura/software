@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class Library here.
  *
@@ -8,36 +8,51 @@
 public class Library
 {
     private String name;
-    private int catalogueNumber;
-    private String auther;
-    private String title;
-    private 
+    Borrower borrower;
+    Book book;
     public String RegisterOneBorrower(String name){
         this.name = name;
+        borrower = new Borrower();
+        Iterator<String> iterator = borrower.setname.iterator();
+        while(iterator.hasNext()){
+            if(this.name.equals(iterator.next())){
+                System.out.println("이 이용자는 이미 등록되고 있습니다.");
+                break;
+            }
+        }
         return this.name;
     }
-    public void requestOneBorrower(String name){
-        this.name = name;
-    }
-    public void RegisterOneBook(String title,String auther,int catalogNumber){
-        this.title = title;
-        this.auther =auther;
-        this.catalogueNumber = catalogNumber;
+    public void RequestOneBook(String title,String auther){
+        book = new Book(title,auther);
+        book.compareTo(book);
+        book.Add();
     }
     public void DisplayBooksForLoan(){
-        return DisplayBooksForLoan;
+        
     }
     public void DisplayBooksOnLoan(){
-        return DisplayBooksOnLoan;
+        
     }
-    public void LendOneBook(String name,int catalogNumber){
-        this.name = name;
-        this.catalogueNumber = catalogNumber;
+    public void LendOneBook(Book book){
+        book = new Book();
+        Loan loan = new Loan();
+        loan.LendOneBook(book);
     }
     public void ReturnOneBook(int catalogNumber){
-        this.catalogueNumber = catalogNumber;
+        
     }
-    public void FindBook(Book catalogNumber){
-        this.catalogueNumber = catalogNumber;
+    public void FindBook(int catalogNumber){
+        book = new Book(); 
+        Iterator<Integer> catalog = book.number.iterator();
+        Iterator<Book> title = book.booklist.iterator();
+        while(true){
+            if(catalogNumber == catalog.next()){
+                System.out.println("catalogNumber,title,auther"+
+                                    catalogNumber+" "+title.next());
+                break;
+            }
+            title.next();
+        }
+        System.out.println("찾으신 책이 없습니다.");
     }
 }

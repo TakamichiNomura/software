@@ -7,20 +7,12 @@ import java.util.*;
  */
 public class Loan
 {
-    private String name;
-    private String book;
-    static LinkedList<HashMap> link;
-    public String LendOneBook(String name, String book){
-        this.name = name;
-        this.book = book;
-        link = new LinkedList<HashMap>();
-        HashMap<String, String> hmap = new HashMap<String,String>();
-        hmap.put(name,book);
-        link.add(hmap);
+    private Book book;
+    static LinkedList<Book> booklist = new LinkedList<Book>();
+    public void LendOneBook(Book book){
+        booklist.add(book);
     }
-    public String ReturnOneBook(String name,String book){
-        this.name = name;
-        this.book = book;
+    public void ReturnOneBook(Book book){
         
     }
 }

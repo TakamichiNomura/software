@@ -7,26 +7,25 @@ import java.util.*;
  */
 public class Book
 {
-    private int catalogueNumber;
+    private int catalogNumber;
     private String auther;
     private String title;
-    private int compareTo;
-    private 
-    public void Add(String title,String auther,int catalogNumber){
-        this.title = title;
+    static TreeSet<Integer> number = new TreeSet<Integer>();
+    static LinkedList<Book> booklist = new LinkedList<Book>();
+    public Book(){}
+    public Book(String auther,String title){
         this.auther = auther;
-        this.catalogueNumber = catalogNumber;
-        Set<String> settitle = new TreeSet<>();
-        settitle.add(title);
-        //List<String> lList = new ArrayList<String>();
-        
+        this.title = title;
+    }
+    public void Add(){
+        booklist.add(this.catalogNumber,new Book(this.auther,this.title));
+        System.out.println("정상적으로 등록되었습니다.");
     }
     public void Display(){
         
-        
     }
     public void getBorrower(){
-        return borrower;
+        
     }
     public void attachBorrower(){
         
@@ -34,8 +33,15 @@ public class Book
     public void detachBorrower(){
         
     }
-    public int compareTo(Object obj){
-        
+    public Book compareTo(Book book){
+        Iterator<Book> iterator = booklist.iterator();
+        while(iterator.hasNext()){
+            if(book.equals(iterator.next())){
+                System.out.println("이미 등록되어 있는 책입니다.");
+                break;
+            }
+        }
+        return book;
     }
     public boolean equals(Object obj){
         
