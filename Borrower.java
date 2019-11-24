@@ -7,27 +7,17 @@
  */
 public class Borrower
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Borrower
-     */
-    public Borrower()
-    {
-        // initialise instance variables
-        x = 0;
+    private String name;
+    public String RequestBook(String title,String auther){
+        
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public String SearchBook(String title){
+        
+    }
+    public void BorrowBook(Book book){
+        
+    }
+    public void RetrunBook(Book book){
+        
     }
 }
