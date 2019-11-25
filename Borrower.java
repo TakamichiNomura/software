@@ -33,4 +33,7 @@ public class Borrower
         library = new Library(catalogNumber,auther,title); 
         library.RetrunOneBook(catalogNumber,title,auther);
     }
+    public String toString(){
+        return name;
+    }
 }

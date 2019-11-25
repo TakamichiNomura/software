@@ -5,20 +5,21 @@ import java.util.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Loan
+public class Loan<Book>
 {
     private Book book;
-    static LinkedList<Book> booklist = new LinkedList<Book>();
+    LinkedList<Book> booklist = new LinkedList<Book>();
     public void LendOneBook(int catalogNumber,Book book){
         booklist.add(catalogNumber,book);
     }
-    public void ReturnOneBook(int catalogNumber,Book book){
+    public String ReturnOneBook(int catalogNumber,Book book){
         Iterator<Book> iterator = booklist.iterator();
         while(iterator.hasNext()){
             if(book == iterator.next()){
                 booklist.remove(catalogNumber);
-                break;
+                return " ";
             }
         }
+        return " ";
     }
 }

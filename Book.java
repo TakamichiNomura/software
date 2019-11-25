@@ -19,8 +19,8 @@ public class Book
         this.title = title;
         this.catalogNumber = catalogNumber;
     }
-    public void Display(){
-        
+    public String toString(){
+        return catalogNumber+","+auther+","+title;
     }
     public void attachBorrower(int catalogNumber,String auther,String title){
         Book book = new Book(auther,title);

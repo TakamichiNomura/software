@@ -26,6 +26,7 @@ public class Library
         Iterator<Borrower> iterator = borrowers.iterator();
         while(iterator.hasNext()){
             Borrower dish = iterator.next();
+            dish.toString();
             if(this.name.equals(dish)){
                 System.out.println("이 이용자는 이미 등록되고 있습니다.");
                 break;
@@ -38,19 +39,19 @@ public class Library
         }
     }
 
-    public void RequestOneBook(){
+    public String RequestOneBook(){
+        books = new TreeSet<Book>();
         Iterator<Book> iterator = books.iterator();
         while(iterator.hasNext()){
             Book dish = iterator.next();
             if(book.equals(dish)){
                 System.out.println("이미 등록되어 있는 책입니다.");
-                break;
+                return " ";
             }
         }
-        if(iterator.hasNext() == false){
-            books.add(book);
-            System.out.println("신청되었습니다.");
-        }
+        books.add(book);
+        System.out.println("신청되었습니다.");
+        return " ";
     }
 
     public void DisplayBooksForLoan(){
@@ -58,7 +59,7 @@ public class Library
     }
 
     public void DisplayBooksOnLoan(){
-
+        
     }
 
     public void LendOneBook(int catalogNumber,String auther,String title){
@@ -69,18 +70,17 @@ public class Library
         book.detachBorrower(catalogNumber,auther,title);
     }
 
-    public void FindBook(){
+    public String FindBook(){
         Iterator<Book> iterator = books.iterator();
-        while(true){
+        while(iterator.hasNext()){
             Book dish = iterator.next();
             if(book.equals(dish)){
                 System.out.println("catalogNumber,title,auther"+
                     book);
-                break;
+                return " ";
             }
         }
-        if(iterator.hasNext() == false){
-            System.out.println("찾으신 책이 없습니다.");
-        }
+        System.out.println("찾으신 책이 없습니다.");
+        return " ";
     }
 }
