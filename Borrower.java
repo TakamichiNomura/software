@@ -8,45 +8,29 @@ import java.util.*;
 public class Borrower
 {
     private String name;
-    static TreeSet<String> setname;
     Library library;
-    Book book;
     public Borrower(String name){
         this.name = name;
     }
-    public String BorrowerAdd(String name){
+    public void BorrowerAdd(String name){
         this.name = name;
-        int i = 0;
-        Iterator<String> iterator = setname.iterator();
-        while(iterator.hasNext()){
-            String user = iterator.next();
-            if(this.name.equals(user)){
-                System.out.println("이 이용자는 이미 등록되고 있습니다.");
-                break;
-            }
-        }
-        if(iterator.hasNext() == false){
-            System.out.println(this.name +"님을등록겠습니다.");
-            setname.add(this.name);
-            return this.name;
-        }
+        library = new Library(name);
+        library.RegisterOneBorrower(name);
     }
-    public void RequestBook(Book book){
-        library = new Library(book);
-        library.RequestOneBook(book);
+    public void RequestBook(int catalogNumber,String auther,String title){
+        library = new Library(catalogNumber,auther,title);
+        library.RequestOneBook();
     }
-    public void SearchBook(int catalognumber){
-        library = new Library();
-        library.FindBook(catalognumber);
+    public void SearchBook(int catalogNumber,String auther,String title){
+        library = new Library(catalogNumber,auther,title);
+        library.FindBook();
     }
-    public void BorrowBook(int catalogNumber,String title,String auther){
-        library = new Library();
-        book = new Book(catalogNumber,auther,title);
-        library.LendOneBook(catalogNumber,title,auther);
+    public void BorrowBook(int catalogNumber,String auther,String title){
+        library = new Library(catalogNumber,auther,title);
+        library.LendOneBook(catalogNumber,auther,title);
     }
-    public void RetrunBook(int catalogNumber,String title,String auther){
-        library = new Library(); 
-        book = new Book(catalogNumber,auther,title);
+    public void RetrunBook(int catalogNumber,String auther,String title){
+        library = new Library(catalogNumber,auther,title); 
         library.RetrunOneBook(catalogNumber,title,auther);
     }
 }

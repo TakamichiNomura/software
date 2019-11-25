@@ -13,47 +13,74 @@ public class Library
     Book book;
     public Library(String name){
         this.name = name;
-        books = new TreeSet<Book>();
-        borrowers = new HashSet<Borrower>();
     }
-    public void RegisterOneBorrower(String name){
-        Borrower borrower = new Borrower(name);
-        borrower.BorrowerAdd(name);
-        borrowers.add(borrower);
-    }
-    public void RequestOneBook(int catalogNumber,String title,String auther){
+
+    public Library(int catalogNumber,String title,String auther){
         book = new Book(catalogNumber,auther,title);
-        book.compareTo(book);
-        book.Add();
+        books = new TreeSet<Book>();
     }
+
+    public void RegisterOneBorrower(String name){
+        this.name = name;
+        borrowers = new HashSet<Borrower>();
+        Iterator<Borrower> iterator = borrowers.iterator();
+        while(iterator.hasNext()){
+            Borrower dish = iterator.next();
+            if(this.name.equals(dish)){
+                System.out.println("이 이용자는 이미 등록되고 있습니다.");
+                break;
+            }
+        }   
+        if(iterator.hasNext() == false){
+            Borrower user = new Borrower(this.name);
+            borrowers.add(user);
+            System.out.println("등록되었습니다");
+        }
+    }
+
+    public void RequestOneBook(){
+        Iterator<Book> iterator = books.iterator();
+        while(iterator.hasNext()){
+            Book dish = iterator.next();
+            if(book.equals(dish)){
+                System.out.println("이미 등록되어 있는 책입니다.");
+                break;
+            }
+        }
+        if(iterator.hasNext() == false){
+            books.add(book);
+            System.out.println("신청되었습니다.");
+        }
+    }
+
     public void DisplayBooksForLoan(){
         
     }
+
     public void DisplayBooksOnLoan(){
-        
+
     }
+
     public void LendOneBook(int catalogNumber,String auther,String title){
-        book = new Book(catalogNumber,auther,title);
-        Loan loan = new Loan();
-        loan.LendOneBook(catalogNumber,book);
+        book.attachBorrower(catalogNumber,auther,title);
     }
+
     public void RetrunOneBook(int catalogNumber,String auther,String title){
-        book = new Book(catalogNumber,auther,title);
-        Loan loan = new Loan();
-        loan.ReturnOneBook(catalogNumber,book);
+        book.detachBorrower(catalogNumber,auther,title);
     }
-    public void FindBook(int catalogNumber,String auther,String title){
-        book = new Book(catalogNumber,auther,title); 
-        Iterator<Integer> catalog = book.number.iterator();
-        Iterator<Book> tit = book.booklist.iterator();
+
+    public void FindBook(){
+        Iterator<Book> iterator = books.iterator();
         while(true){
-            if(catalogNumber == catalog.next()){
+            Book dish = iterator.next();
+            if(book.equals(dish)){
                 System.out.println("catalogNumber,title,auther"+
-                                    catalogNumber+" "+tit.next());
+                    book);
                 break;
             }
-            tit.next();
         }
-        System.out.println("찾으신 책이 없습니다.");
+        if(iterator.hasNext() == false){
+            System.out.println("찾으신 책이 없습니다.");
+        }
     }
 }

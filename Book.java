@@ -10,47 +10,27 @@ public class Book
     private int catalogNumber;
     private String auther;
     private String title;
-    static HashSet<Integer> number = new HashSet<Integer>();
-    static TreeSet<String> borrowername = new TreeSet<String>();
-    static LinkedList<Book> booklist = new LinkedList<Book>();
+    public Book(String auther,String title){
+        this.auther = auther;
+        this.title = title;
+    }
     public Book(int catalogNumber,String auther,String title){
         this.auther = auther;
         this.title = title;
         this.catalogNumber = catalogNumber;
     }
-    public void Add(){
-        booklist.add(this.catalogNumber,new Book(this.catalogNumber,this.auther,this.title));
-        System.out.println("정상적으로 등록되었습니다.");
-    }
     public void Display(){
         
     }
-    public void getBorrower(String name){
-        Borrower borrower = new Borrower(name);
-        Iterator<String> iterator = borrower.setname.iterator();
-        while(iterator.hasNext()){
-            if(name.equals(iterator.name)){
-                
-            }
-        }
+    public void attachBorrower(int catalogNumber,String auther,String title){
+        Book book = new Book(auther,title);
+        Loan loan = new Loan();
+        loan.LendOneBook(catalogNumber,book);
     }
-    public void attachBorrower(String name){
-        this.auther = name;
-        borrowername.add(this.auther);
-    }
-    public void detachBorrower(String name){
-        this.auther = name;
-        borrowername.remove(this.auther);
-    }
-    public Book compareTo(Book book){
-        Iterator<Book> iterator = booklist.iterator();
-        while(iterator.hasNext()){
-            if(book.equals(iterator.next())){
-                System.out.println("이미 등록되어 있는 책입니다.");
-                break;
-            }
-        }
-        return book;
+    public void detachBorrower(int catalogNumber,String auther,String title){
+        Book book = new Book(auther,title);
+        Loan loan = new Loan();
+        loan.ReturnOneBook(catalogNumber,book);
     }
     public boolean equals(Object obj){
         return true;
