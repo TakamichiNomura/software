@@ -8,22 +8,21 @@ import java.util.*;
 public class Library
 {
     private String name;
-    Borrower borrower;
+    static TreeSet<Book> books;
+    static HashSet<Borrower> borrowers;
     Book book;
-    public String RegisterOneBorrower(String name){
+    public Library(String name){
         this.name = name;
-        borrower = new Borrower();
-        Iterator<String> iterator = borrower.setname.iterator();
-        while(iterator.hasNext()){
-            if(this.name.equals(iterator.next())){
-                System.out.println("이 이용자는 이미 등록되고 있습니다.");
-                break;
-            }
-        }
-        return this.name;
+        books = new TreeSet<Book>();
+        borrowers = new HashSet<Borrower>();
     }
-    public void RequestOneBook(String title,String auther){
-        book = new Book(title,auther);
+    public void RegisterOneBorrower(String name){
+        Borrower borrower = new Borrower(name);
+        borrower.BorrowerAdd(name);
+        borrowers.add(borrower);
+    }
+    public void RequestOneBook(int catalogNumber,String title,String auther){
+        book = new Book(catalogNumber,auther,title);
         book.compareTo(book);
         book.Add();
     }
@@ -33,27 +32,27 @@ public class Library
     public void DisplayBooksOnLoan(){
         
     }
-    public void LendOneBook(int catalogNumber,Book book){
-        book = new Book();
+    public void LendOneBook(int catalogNumber,String auther,String title){
+        book = new Book(catalogNumber,auther,title);
         Loan loan = new Loan();
         loan.LendOneBook(catalogNumber,book);
     }
-    public void RetrunOneBook(int catalogNumber,Book book){
-        book = new Book();
+    public void RetrunOneBook(int catalogNumber,String auther,String title){
+        book = new Book(catalogNumber,auther,title);
         Loan loan = new Loan();
         loan.ReturnOneBook(catalogNumber,book);
     }
-    public void FindBook(int catalogNumber){
-        book = new Book(); 
+    public void FindBook(int catalogNumber,String auther,String title){
+        book = new Book(catalogNumber,auther,title); 
         Iterator<Integer> catalog = book.number.iterator();
-        Iterator<Book> title = book.booklist.iterator();
+        Iterator<Book> tit = book.booklist.iterator();
         while(true){
             if(catalogNumber == catalog.next()){
                 System.out.println("catalogNumber,title,auther"+
-                                    catalogNumber+" "+title.next());
+                                    catalogNumber+" "+tit.next());
                 break;
             }
-            title.next();
+            tit.next();
         }
         System.out.println("찾으신 책이 없습니다.");
     }

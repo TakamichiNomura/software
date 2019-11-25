@@ -13,23 +13,25 @@ public class Book
     static HashSet<Integer> number = new HashSet<Integer>();
     static TreeSet<String> borrowername = new TreeSet<String>();
     static LinkedList<Book> booklist = new LinkedList<Book>();
-    public Book(){}
-    public Book(String auther,String title){
+    public Book(int catalogNumber,String auther,String title){
         this.auther = auther;
         this.title = title;
+        this.catalogNumber = catalogNumber;
     }
     public void Add(){
-        booklist.add(this.catalogNumber,new Book(this.auther,this.title));
+        booklist.add(this.catalogNumber,new Book(this.catalogNumber,this.auther,this.title));
         System.out.println("정상적으로 등록되었습니다.");
     }
     public void Display(){
         
     }
-    public void getBorrower(){
-        Borrower borrower = new Borrower();
+    public void getBorrower(String name){
+        Borrower borrower = new Borrower(name);
         Iterator<String> iterator = borrower.setname.iterator();
         while(iterator.hasNext()){
-            
+            if(name.equals(iterator.name)){
+                
+            }
         }
     }
     public void attachBorrower(String name){
@@ -51,6 +53,6 @@ public class Book
         return book;
     }
     public boolean equals(Object obj){
-        
+        return true;
     }
 }
