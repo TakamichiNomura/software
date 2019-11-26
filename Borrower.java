@@ -8,20 +8,32 @@ import java.util.*;
 public class Borrower
 {
     private String name;
-    private String title;
-    private String auther;
-    public String RequestBook(String title,String auther){
-        this.title = title;
-        this.auther = auther;
-        
+    Library library;
+    public Borrower(String name){
+        this.name = name;
     }
-    public String SearchBook(String title){
-        this.title = title;
+    public void BorrowerAdd(String name){
+        this.name = name;
+        library = new Library(name);
+        library.RegisterOneBorrower(name);
     }
-    public void BorrowBook(Book book){
-        
+    public void RequestBook(int catalogNumber,String auther,String title){
+        library = new Library(catalogNumber,auther,title);
+        library.RequestOneBook();
     }
-    public void RetrunBook(Book book){
-        return;
+    public void SearchBook(int catalogNumber,String auther,String title){
+        library = new Library(catalogNumber,auther,title);
+        library.FindBook();
+    }
+    public void BorrowBook(int catalogNumber,String auther,String title){
+        library = new Library(catalogNumber,auther,title);
+        library.LendOneBook(catalogNumber,auther,title);
+    }
+    public void RetrunBook(int catalogNumber,String auther,String title){
+        library = new Library(catalogNumber,auther,title); 
+        library.RetrunOneBook(catalogNumber,title,auther);
+    }
+    public String toString(){
+        return name;
     }
 }

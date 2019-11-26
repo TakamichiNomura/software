@@ -7,37 +7,32 @@ import java.util.*;
  */
 public class Book
 {
-    private int catalogueNumber;
+    private int catalogNumber;
     private String auther;
     private String title;
-    private int compareTo;
-    private 
-    public void Add(String title,String auther,int catalogNumber){
-        this.title = title;
+    public Book(String auther,String title){
         this.auther = auther;
-        this.catalogueNumber = catalogNumber;
-        Set<String> settitle = new TreeSet<>();
-        settitle.add(title);
-        //List<String> lList = new ArrayList<String>();
-        
+        this.title = title;
     }
-    public void Display(){
-        
-        
+    public Book(int catalogNumber,String auther,String title){
+        this.auther = auther;
+        this.title = title;
+        this.catalogNumber = catalogNumber;
     }
-    public void getBorrower(){
-        return borrower;
+    public String toString(){
+        return catalogNumber+","+auther+","+title;
     }
-    public void attachBorrower(){
-        
+    public void attachBorrower(int catalogNumber,String auther,String title){
+        Book book = new Book(auther,title);
+        Loan loan = new Loan();
+        loan.LendOneBook(catalogNumber,book);
     }
-    public void detachBorrower(){
-        
-    }
-    public int compareTo(Object obj){
-        
+    public void detachBorrower(int catalogNumber,String auther,String title){
+        Book book = new Book(auther,title);
+        Loan loan = new Loan();
+        loan.ReturnOneBook(catalogNumber,book);
     }
     public boolean equals(Object obj){
-        
+        return true;
     }
 }
