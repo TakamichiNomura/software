@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Borrower
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Borrower\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=name
+comment1.target=Borrower(java.lang.String)
+comment2.params=name
+comment2.target=void\ BorrowerAdd(java.lang.String)
+comment3.params=catalogNumber\ auther\ title
+comment3.target=void\ RequestBook(int,\ java.lang.String,\ java.lang.String)
+comment4.params=catalogNumber\ auther\ title
+comment4.target=void\ SearchBook(int,\ java.lang.String,\ java.lang.String)
+comment5.params=catalogNumber\ auther\ title
+comment5.target=void\ BorrowBook(int,\ java.lang.String,\ java.lang.String)
+comment6.params=catalogNumber\ auther\ title
+comment6.target=void\ RetrunBook(int,\ java.lang.String,\ java.lang.String)
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Library
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Library\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (2019/11/26)\r\n
+comment1.params=name
+comment1.target=Library(java.lang.String)
+comment2.params=catalogNumber\ title\ auther
+comment2.target=Library(int,\ java.lang.String,\ java.lang.String)
+comment3.params=name
+comment3.target=void\ RegisterOneBorrower(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ RequestOneBook()
+comment5.params=
+comment5.target=void\ DisplayBooksForLoan()
+comment6.params=
+comment6.target=void\ DisplayBooksOnLoan()
+comment7.params=catalogNumber\ auther\ title
+comment7.target=void\ LendOneBook(int,\ java.lang.String,\ java.lang.String)
+comment8.params=catalogNumber\ auther\ title
+comment8.target=void\ RetrunOneBook(int,\ java.lang.String,\ java.lang.String)
+comment9.params=
+comment9.target=java.lang.String\ FindBook()
+numComments=10
