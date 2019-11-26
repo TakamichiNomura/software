@@ -2,8 +2,8 @@ import java.util.*;
 /**
  * Write a description of class Library here.
  *
- * @author (your name.)
- * @version (a version number or a date)
+ * @author (your name)
+ * @version (2019/11/26)
  */
 public class Library
 {
