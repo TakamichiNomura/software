@@ -7,16 +7,21 @@ import java.util.*;
  */
 public class Loan<Book>
 {
+    private String name;
     private Book book;
     LinkedList<Book> booklist = new LinkedList<Book>();
-    public void LendOneBook(int catalogNumber,Book book){
-        booklist.add(catalogNumber,book);
+    public Loan(String name,Book book){
+        this.name = name;
+        this.book = book;
     }
-    public String ReturnOneBook(int catalogNumber,Book book){
+    public void LendOneBook(String name,Book book){
+        booklist.add(this.name,this.book);
+    }
+    public String ReturnOneBook(String name,Book book){
         Iterator<Book> iterator = booklist.iterator();
         while(iterator.hasNext()){
             if(book == iterator.next()){
-                booklist.remove(catalogNumber);
+                booklist.remove(this.name);
                 return " ";
             }
         }

@@ -1,15 +1,15 @@
 #BlueJ package file
-dependency1.from=Book
-dependency1.to=Loan
+dependency1.from=Library
+dependency1.to=Book
 dependency1.type=UsesDependency
-dependency2.from=Borrower
-dependency2.to=Library
+dependency2.from=Library
+dependency2.to=Borrower
 dependency2.type=UsesDependency
-dependency3.from=Library
-dependency3.to=Book
+dependency3.from=Borrower
+dependency3.to=Library
 dependency3.type=UsesDependency
-dependency4.from=Library
-dependency4.to=Borrower
+dependency4.from=Book
+dependency4.to=Loan
 dependency4.type=UsesDependency
 editor.fx.0.height=737
 editor.fx.0.width=814
