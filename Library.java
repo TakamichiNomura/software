@@ -25,10 +25,10 @@ public class Library
         this.catalogueNumber = catalogNumber;
     }
     public void DisplayBooksForLoan(){
-        return DisplayBooksForLoan;
+        
     }
     public void DisplayBooksOnLoan(){
-        return DisplayBooksOnLoan;
+        
     }
     public void LendOneBook(String name,int catalogNumber){
         this.name = name;
