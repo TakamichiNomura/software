@@ -25,9 +25,10 @@ public class Borrower
         library = new Library(catalogNumber,auther,title);
         library.FindBook();
     }
-    public void BorrowBook(int catalogNumber,String auther,String title){
+    public void BorrowBook(String name,int catalogNumber,String auther,String title){
         library = new Library(catalogNumber,auther,title);
-        library.LendOneBook(catalogNumber,auther,title);
+        this.name = name;
+        library.LendOneBook(name,catalogNumber,auther,title);
     }
     public void RetrunBook(int catalogNumber,String auther,String title){
         library = new Library(catalogNumber,auther,title); 
