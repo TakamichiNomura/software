@@ -3,7 +3,11 @@ import java.util.*;
  * Write a description of class Library here.
  *
  * @author (your name)
+<<<<<<< HEAD
  * @version (2019/11/28)
+=======
+ * @version (2019/11/25)
+>>>>>>> 82d57ceeba057ace146800cb4ab0ecfe4833908e
  */
 public class Library
 {
