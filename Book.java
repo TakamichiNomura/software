@@ -11,6 +11,11 @@ public class Book
     private String author;
     private String title;
     static TreeSet<Book> books;
+    public Book(String author,String title){
+        this.author = author;
+        this.title = title;
+    }
+    
     public Book(int catalogueNumber,String author,String title){
         this.author = author;
         this.title = title;
