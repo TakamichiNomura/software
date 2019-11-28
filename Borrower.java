@@ -36,14 +36,14 @@ public class Borrower
     }
     public String getBorrower(){
         library = new Library(this.name);
-        Iterator it = library.borrowers.iterator();
+        Iterator<Borrower> it = library.borrowers.iterator();
         while(it.hasNext()){
-            String user = it.next();
+            Borrower user = it.next();
             if(this.name.equals(user)){
-                return 0;
+                return "0";
             }
         }
-        return 1;
+        return "1";
     }
     public String toString(){
         return name;

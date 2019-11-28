@@ -67,10 +67,10 @@ public class Library
         if(book.FindBook(catalogueNumber, author, title) == 0){
             Borrower borrower = new Borrower(name);
             borrower.getBorrower();
-            if(borrower.getBorrower() == 1){
+            if(borrower.getBorrower().equals("1")){
                 System.out.println("등록되어 있지않은 사람입니다.");
-            }else if(borrower.getBorrower() == 0){
-                Book bk = new Book(auther,title);
+            }else if(borrower.getBorrower().equals("0")){
+                Book bk = new Book(author,title);
                 bk.attachBorrower(catalogueNumber,bk);
             }
         }else if(book.FindBook(catalogueNumber, author, title) == 1){
@@ -78,8 +78,21 @@ public class Library
         }
     }
 
-    public void RetrunOneBook(int catalogueNumber,String auther,String title){
-        book.detachBorrower(catalogueNumber,auther,title);
+    public void RetrunOneBook(int catalogueNumber,String author,String title){
+        Book book = new Book(catalogueNumber,author,title);
+        book.FindBook(catalogueNumber, author, title);
+        if(book.FindBook(catalogueNumber, author, title) == 1){
+            Borrower borrower = new Borrower(name);
+            borrower.getBorrower();
+            if(borrower.getBorrower().equals("1")){
+                System.out.println("등록되어 있지않은 사람입니다.");
+            }else if(borrower.getBorrower().equals("0")){
+                Book bk = new Book(author,title);
+                book.detachBorrower(catalogueNumber,bk);
+            }
+        }else if(book.FindBook(catalogueNumber, author, title) == 0){
+            System.out.println("이 책은 없습니다.");
+        }
     }
     
     public void RegisterOneBook(String title, String author, int catalogueNumber){

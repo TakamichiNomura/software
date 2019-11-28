@@ -15,15 +15,16 @@ public class Book
         this.author = author;
         this.title = title;
     }
-    
+
     public Book(int catalogueNumber,String author,String title){
         this.author = author;
         this.title = title;
         this.catalogueNumber = catalogueNumber;
         books = new TreeSet<Book>();
     }
-    
+
     public int FindBook(int catalogueNumber,String author,String title){
+        Book book = new Book(catalogueNumber,author,title);
         Iterator<Book> iterator = books.iterator();
         while(iterator.hasNext()){
             Book dish = iterator.next();
@@ -43,12 +44,12 @@ public class Book
         loan.LendOneBook(catalogueNumber,book);
     }
 
-    public void detachBorrower(String name,Book book){
-        Loan loan = new Loan(name,book);
-        loan.ReturnOneBook(name,book);
+    public void detachBorrower(int catalogueNumber,Book book){
+        Loan loan = new Loan(catalogueNumber,book);
+        loan.ReturnOneBook(catalogueNumber,book);
     }
 
-    public String BookList(int catalogueNumber,String author,String title){
+    public void BookList(int catalogueNumber,String author,String title){
         this.title = title;
         this.author = author;
         this.catalogueNumber = catalogueNumber;
@@ -58,7 +59,7 @@ public class Book
             String dish = iterator.next().toString();
             if(this.title.equals(dish)){
                 System.out.println("이 책은 이미 등록되고 있습니다.");
-                return " ";
+                break;
             }
         }   
         BookAdd(catalogueNumber, author, title);
