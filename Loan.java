@@ -9,7 +9,6 @@ public class Loan<Book>
 {
     int catalogueNumber;
     private Book book;
-    HashSet<Book> hset = new HashSet<Book>();
     LinkedList<Book> booklist = new LinkedList<Book>();
     public Loan(int catalogueNumber,Book book){
         this.catalogueNumber = catalogueNumber;
@@ -29,11 +28,14 @@ public class Loan<Book>
         }
         return " ";
     }
-    public void CheckBook(){
-        Iterator<Book> it = booklist.iterator();
-        while(it.hasNext()){
-            Book bk = it.next();
-            if(book.equals(bk)){
+    public void CheckBook(String author,String title){
+        book = new Book(author,title);
+        Iterator<Book> bookit = book.bklist.iterator();
+        Iterator<Book> loanit = booklist.iterator();
+        while(bookit.hasNext()){
+            Book bkit = bookit.next();
+            Book lnit = loanit.next();
+            if(lnit.equals(bkit)){
                 
             }
         }

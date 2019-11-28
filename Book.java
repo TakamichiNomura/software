@@ -10,7 +10,8 @@ public class Book
     private int catalogueNumber;
     private String author;
     private String title;
-    static TreeSet<Book> books;
+    TreeSet<Book> books;
+    LinkedList<Book> bklist;
     public Book(String author,String title){
         this.author = author;
         this.title = title;
@@ -68,6 +69,8 @@ public class Book
     public void BookAdd(int catalogueNumber,String author,String title){
         Book book = new Book(catalogueNumber,author,title);
         books.add(book);
+        Book bk = new Book(author,title);
+        bklist.add(catalogueNumber,bk);
         System.out.println("등록되었습니다");
     }
 }

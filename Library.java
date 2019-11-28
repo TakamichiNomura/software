@@ -54,6 +54,7 @@ public class Library
     }
 
     public void DisplayBooksForLoan(int catalogueNumber,Book bk){
+        books = new Tree
         System.out.println();
     }
 
