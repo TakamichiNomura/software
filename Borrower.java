@@ -17,22 +17,22 @@ public class Borrower
         library = new Library(name);
         library.RegisterOneBorrower(name);
     }
-    public void RequestBook(int catalogueNumber,String auther,String title){
-        library = new Library(catalogueNumber,auther,title);
+    public void RequestBook(int catalogueNumber,String author,String title){
+        library = new Library(catalogueNumber,author,title);
         library.RequestOneBook();
     }
-    public void SearchBook(int catalogueNumber,String auther,String title){
-        library = new Library(catalogueNumber,auther,title);
-        library.FindBook();
+    public void SearchBook(int catalogueNumber,String author,String title){
+        library = new Library(catalogueNumber,author,title);
+        library.FindBook(catalogueNumber,author,title);
     }
-    public void BorrowBook(String name,int catalogueNumber,String auther,String title){
-        library = new Library(catalogueNumber,auther,title);
+    public void BorrowBook(String name,int catalogueNumber,String author,String title){
+        library = new Library(catalogueNumber,author,title);
         this.name = name;
-        library.LendOneBook(name,catalogueNumber,auther,title);
+        library.LendOneBook(name,catalogueNumber,author,title);
     }
-    public void RetrunBook(int catalogueNumber,String auther,String title){
-        library = new Library(catalogueNumber,auther,title); 
-        library.RetrunOneBook(catalogueNumber,title,auther);
+    public void RetrunBook(int catalogueNumber,String author,String title){
+        library = new Library(catalogueNumber,author,title); 
+        library.RetrunOneBook(catalogueNumber,title,author);
     }
     public String toString(){
         return name;

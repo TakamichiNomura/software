@@ -76,8 +76,9 @@ public class Library
         book.BookList(catalogueNumber, author, title);
         book.BookAdd(catalogueNumber, author, title);
     }
-
-    public String FindBook(){
+    
+    public String FindBook(int catalogueNumber,String author,String title){
+        Book book = new Book(catalogueNumber, author, title);
         Iterator<Book> iterator = books.iterator();
         while(iterator.hasNext()){
             Book dish = iterator.next();
@@ -90,4 +91,5 @@ public class Library
         System.out.println("찾으신 책이 없습니다.");
         return " ";
     }
+    
 }
