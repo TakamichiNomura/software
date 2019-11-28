@@ -3,17 +3,13 @@ import java.util.*;
  * Write a description of class Library here.
  *
  * @author (your name)
-<<<<<<< HEAD
  * @version (2019/11/28)
-=======
- * @version (2019/11/25)
->>>>>>> 82d57ceeba057ace146800cb4ab0ecfe4833908e
  */
 public class Library
 {
     private String name;
     static TreeSet<Book> books;
-    static HashSet<Borrower> borrowers;
+    static TreeSet<Borrower> borrowers;
     Book book;
     public Library(String name){
         this.name = name;
@@ -26,11 +22,10 @@ public class Library
 
     public void RegisterOneBorrower(String name){
         this.name = name;
-        borrowers = new HashSet<Borrower>();
+        borrowers = new TreeSet<Borrower>();
         Iterator<Borrower> iterator = borrowers.iterator();
         while(iterator.hasNext()){
-            Borrower dish = iterator.next();
-            dish.toString();
+            String dish = iterator.next().toString();
             if(this.name.equals(dish)){
                 System.out.println("이 이용자는 이미 등록되고 있습니다.");
                 break;

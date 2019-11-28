@@ -26,7 +26,4 @@ public class Book
         Loan loan = new Loan(name,book);
         loan.ReturnOneBook(name,book);
     }
-    public boolean equals(Object obj){
-        return true;
-    }
 }
