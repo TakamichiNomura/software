@@ -20,7 +20,8 @@ public class Loan<Book>
     public String ReturnOneBook(int catalogueNumber,Book book){
         Iterator<Book> iterator = booklist.iterator();
         while(iterator.hasNext()){
-            if(book == iterator.next()){
+            Book bk = iterator.next();
+            if(book.equals(bk)){
                 booklist.remove(this.catalogueNumber);
                 return " ";
             }
