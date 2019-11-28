@@ -53,12 +53,12 @@ public class Library
         return " ";
     }
 
-    public void DisplayBooksForLoan(){
-        
+    public void DisplayBooksForLoan(int catalogueNumber,Book bk){
+        System.out.println();
     }
 
-    public void DisplayBooksOnLoan(){
-        
+    public void DisplayBooksOnLoan(int catalogueNumber,Book bk){
+        System.out.println();
     }
 
     public void LendOneBook(String name,int catalogueNumber,String author,String title){

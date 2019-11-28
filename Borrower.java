@@ -21,9 +21,10 @@ public class Borrower
         library = new Library(catalogueNumber,author,title);
         library.RequestOneBook();
     }
-    public void SearchBook(int catalogueNumber,String author,String title, Book book){
+    public void SearchBook(int catalogueNumber,String author,String title){
+        Book book = new Book(author,title);
         Loan loan = new Loan(catalogueNumber, book);
-        loan.CheckBook(catalogueNumber, book);
+        loan.CheckBook();
     }
     public void BorrowBook(String name,int catalogueNumber,String author,String title){
         library = new Library(catalogueNumber,author,title);
