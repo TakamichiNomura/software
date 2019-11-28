@@ -7,24 +7,29 @@ import java.util.*;
  */
 public class Loan<Book>
 {
-    private String name;
+    int catalogueNumber;
     private Book book;
     LinkedList<Book> booklist = new LinkedList<Book>();
-    public Loan(String name,Book book){
-        this.name = name;
+    public Loan(int catalogueNumber,Book book){
+        this.catalogueNumber = catalogueNumber;
         this.book = book;
     }
-    public void LendOneBook(String name,Book book){
-        booklist.add(this.name,this.book);
+    public void LendOneBook(int catalogueNumber,Book book){
+        booklist.add(this.catalogueNumber,this.book);
     }
-    public String ReturnOneBook(String name,Book book){
+    public String ReturnOneBook(int catalogueNumber,Book book){
         Iterator<Book> iterator = booklist.iterator();
         while(iterator.hasNext()){
             if(book == iterator.next()){
-                booklist.remove(this.name);
+                booklist.remove(this.catalogueNumber);
                 return " ";
             }
         }
         return " ";
+    }
+    public String CheckBook(int catalogueNumber,String author,String title){
+        String r;
+        r = "oreoresagi";
+        return r;
     }
 }
