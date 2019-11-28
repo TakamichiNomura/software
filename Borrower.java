@@ -34,6 +34,17 @@ public class Borrower
         library = new Library(catalogueNumber,author,title); 
         library.RetrunOneBook(catalogueNumber,title,author);
     }
+    public String getBorrower(){
+        library = new Library(this.name);
+        Iterator it = library.borrowers.iterator();
+        while(it.hasNext()){
+            String user = it.next();
+            if(this.name.equals(user)){
+                return 0;
+            }
+        }
+        return 1;
+    }
     public String toString(){
         return name;
     }

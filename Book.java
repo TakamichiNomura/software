@@ -22,14 +22,25 @@ public class Book
         this.catalogueNumber = catalogueNumber;
         books = new TreeSet<Book>();
     }
+    
+    public int FindBook(int catalogueNumber,String author,String title){
+        Iterator<Book> iterator = books.iterator();
+        while(iterator.hasNext()){
+            Book dish = iterator.next();
+            if(book.equals(dish)){
+                return 1;
+            }
+        }
+        return 0;
+    }
 
     public String toString(){
         return catalogueNumber +","+author+","+title;
     }
 
-    public void attachBorrower(){
-        Loan loan = new Loan(name,book);
-        loan.LendOneBook(name,book);
+    public void attachBorrower(int catalogueNumber,Book book){
+        Loan loan = new Loan(catalogueNumber,book);
+        loan.LendOneBook(catalogueNumber,book);
     }
 
     public void detachBorrower(String name,Book book){
@@ -50,6 +61,7 @@ public class Book
                 return " ";
             }
         }   
+        BookAdd(catalogueNumber, author, title);
     }
 
     public void BookAdd(int catalogueNumber,String author,String title){

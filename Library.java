@@ -61,8 +61,21 @@ public class Library
         
     }
 
-    public void LendOneBook(int catalogueNumber,String author,String title){
-        FindBook(catalogueNumber, author, title);
+    public void LendOneBook(String name,int catalogueNumber,String author,String title){
+        Book book = new Book(catalogueNumber,author,title);
+        book.FindBook(catalogueNumber, author, title);
+        if(book.FindBook(catalogueNumber, author, title) == 0){
+            Borrower borrower = new Borrower(name);
+            borrower.getBorrower();
+            if(borrower.getBorrower() == 1){
+                System.out.println("등록되어 있지않은 사람입니다.");
+            }else if(borrower.getBorrower() == 0){
+                Book bk = new Book(auther,title);
+                bk.attachBorrower(catalogueNumber,bk);
+            }
+        }else if(book.FindBook(catalogueNumber, author, title) == 1){
+            System.out.println("이 책은 대출할수없습니다.");
+        }
     }
 
     public void RetrunOneBook(int catalogueNumber,String auther,String title){
@@ -72,22 +85,5 @@ public class Library
     public void RegisterOneBook(String title, String author, int catalogueNumber){
         book = new Book(catalogueNumber, author, title);
         book.BookList(catalogueNumber, author, title);
-        book.BookAdd(catalogueNumber, author, title);
     }
-    
-    public String FindBook(int catalogueNumber,String author,String title){
-        Book book = new Book(catalogueNumber, author, title);
-        Iterator<Book> iterator = books.iterator();
-        while(iterator.hasNext()){
-            Book dish = iterator.next();
-            if(book.equals(dish)){
-                System.out.println("catalogueNumber,title,auther"+
-                    book);
-                return " ";
-            }
-        }
-        System.out.println("찾으신 책이 없습니다.");
-        return " ";
-    }
-    
 }

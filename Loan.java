@@ -28,7 +28,6 @@ public class Loan<Book>
         return " ";
     }
     public void CheckBook(int catalogueNumber,Book book){
-        Library lb = new 
         Iterator<Book> it = booklist.iterator();
         while(it.hasNext()){
             Book bk = it.next();
