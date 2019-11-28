@@ -10,7 +10,7 @@ public class Book
     private int catalogueNumber;
     private String author;
     private String title;
-    TreeSet<Book> books;
+    static TreeSet<Book> books;
     public Book(int catalogueNumber,String author,String title){
         this.author = author;
         this.title = title;
@@ -47,7 +47,7 @@ public class Book
         }   
     }
 
-    public void BookAdd(int catalogueNumber,String author,String title){
+    public static void BookAdd(int catalogueNumber,String author,String title){
         Book book = new Book(catalogueNumber,author,title);
         books.add(book);
         System.out.println("등록되었습니다");

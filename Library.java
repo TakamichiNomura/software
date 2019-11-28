@@ -8,7 +8,7 @@ import java.util.*;
 public class Library
 {
     private String name;
-    static TreeSet<Book> books;
+    TreeSet<Book> books;
     static TreeSet<Borrower> borrowers;
     Book book;
     public Library(String name){
@@ -61,14 +61,20 @@ public class Library
         
     }
 
-    public void LendOneBook(String name,int catalogNumber,String auther,String title){
+    public void LendOneBook(String name,int catalogueNumber,String author,String title){
         this.name = name;
-        this.book = new Book(catalogNumber,auther,title);
+        this.book = new Book(catalogueNumber,author,title);
         book.attachBorrower(this.name,this.book);
     }
 
     public void RetrunOneBook(int catalogueNumber,String auther,String title){
         book.detachBorrower(catalogueNumber,auther,title);
+    }
+    
+    public void RegisterOneBook(String title, String author, int catalogueNumber){
+        book = new Book(catalogueNumber, author, title);
+        Book.BookList(catalogueNumber, author, title);
+        Book.BookAdd(catalogueNumber, author, title);
     }
 
     public String FindBook(){
@@ -76,7 +82,7 @@ public class Library
         while(iterator.hasNext()){
             Book dish = iterator.next();
             if(book.equals(dish)){
-                System.out.println("catalogNumber,title,auther"+
+                System.out.println("catalogueNumber,title,auther"+
                     book);
                 return " ";
             }
