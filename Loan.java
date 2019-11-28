@@ -27,9 +27,14 @@ public class Loan<Book>
         }
         return " ";
     }
-    public String CheckBook(int catalogueNumber,String author,String title){
-        String r;
-        r = "oreoresagi";
-        return r;
+    public void CheckBook(int catalogueNumber,Book book){
+        Library lb = new 
+        Iterator<Book> it = booklist.iterator();
+        while(it.hasNext()){
+            Book bk = it.next();
+            if(book.equals(bk)){
+                
+            }
+        }
     }
 }
