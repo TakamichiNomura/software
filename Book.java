@@ -27,7 +27,7 @@ public class Book
         return catalogueNumber +","+author+","+title;
     }
 
-    public void attachBorrower(String name,Book book){
+    public void attachBorrower(){
         Loan loan = new Loan(name,book);
         loan.LendOneBook(name,book);
     }

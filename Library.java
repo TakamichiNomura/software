@@ -61,10 +61,8 @@ public class Library
         
     }
 
-    public void LendOneBook(String name,int catalogueNumber,String author,String title){
-        this.name = name;
-        this.book = new Book(catalogueNumber,author,title);
-        book.attachBorrower(this.name,this.book);
+    public void LendOneBook(int catalogueNumber,String author,String title){
+        FindBook(catalogueNumber, author, title);
     }
 
     public void RetrunOneBook(int catalogueNumber,String auther,String title){
