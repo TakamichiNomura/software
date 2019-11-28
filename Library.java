@@ -73,8 +73,8 @@ public class Library
     
     public void RegisterOneBook(String title, String author, int catalogueNumber){
         book = new Book(catalogueNumber, author, title);
-        Book.BookList(catalogueNumber, author, title);
-        Book.BookAdd(catalogueNumber, author, title);
+        book.BookList(catalogueNumber, author, title);
+        book.BookAdd(catalogueNumber, author, title);
     }
 
     public String FindBook(){
