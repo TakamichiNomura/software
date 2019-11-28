@@ -19,8 +19,8 @@ public class Library
         this.name = name;
     }
 
-    public Library(int catalogNumber,String title,String auther){
-        book = new Book(catalogNumber,auther,title);
+    public Library(int catalogueNumber,String title,String auther){
+        book = new Book(catalogueNumber,auther,title);
         books = new TreeSet<Book>();
     }
 
@@ -72,8 +72,8 @@ public class Library
         book.attachBorrower(this.name,this.book);
     }
 
-    public void RetrunOneBook(int catalogNumber,String auther,String title){
-        book.detachBorrower(catalogNumber,auther,title);
+    public void RetrunOneBook(int catalogueNumber,String auther,String title){
+        book.detachBorrower(catalogueNumber,auther,title);
     }
 
     public String FindBook(){
