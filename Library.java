@@ -11,6 +11,7 @@ public class Library
     TreeSet<Book> books;
     static TreeSet<Borrower> borrowers;
     Book book;
+    public Library(){}
     public Library(String name){
         this.name = name;
     }
@@ -53,9 +54,12 @@ public class Library
         return " ";
     }
 
-    public void DisplayBooksForLoan(int catalogueNumber,Book bk){
-        books = new Tree
-        System.out.println();
+    public void DisplayBooksForLoan(){
+        Loan loan = new Loan();
+        Iterator it = loan.checklist.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
     }
 
     public void DisplayBooksOnLoan(int catalogueNumber,Book bk){
