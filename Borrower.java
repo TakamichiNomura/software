@@ -26,6 +26,11 @@ public class Borrower
         Loan loan = new Loan(catalogueNumber, book);
         loan.CheckBook(catalogueNumber,author,title);
     }
+    public void RefBook(int catalogueNumber,String author,String title){
+        Book book = new Book(author,title);
+        Loan loan = new Loan(catalogueNumber, book);
+        loan.RefarenceBook(catalogueNumber,author,title);
+    }
     public void BorrowBook(String name,int catalogueNumber,String author,String title){
         library = new Library(catalogueNumber,author,title);
         this.name = name;

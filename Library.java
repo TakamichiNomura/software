@@ -61,9 +61,13 @@ public class Library
             System.out.println(it.next());
         }
     }
-
-    public void DisplayBooksOnLoan(int catalogueNumber,Book bk){
-        System.out.println();
+    
+    public void DisplayBooksOnLoan(){
+        Loan loan = new Loan();
+        Iterator it = loan.checklist.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
     }
 
     public void LendOneBook(String name,int catalogueNumber,String author,String title){

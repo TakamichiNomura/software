@@ -40,12 +40,28 @@ public class Loan
             while(loanit.hasNext()){
                 Book lnit = loanit.next();
                 if(bkit.equals(lnit)){
-                    checklist.add(lnit);
+                    break;
                 }
+                checklist.add(lnit);
             }
         }
         Library lb = new Library();
         lb.DisplayBooksForLoan();
     }
-    
+    public void RefarenceBook(int catalogueNumber,String author,String title){
+        checklist = new LinkedList<Book>();
+        Iterator<Book> bookit = this.book.bklist.iterator();
+        Iterator<Book> loanit = booklist.iterator();
+        while(bookit.hasNext()){
+            Book bkit = bookit.next();
+            while(loanit.hasNext()){
+                Book lnit = loanit.next();
+                if(bkit.equals(lnit)){
+                    checklist.add(lnit);
+                }
+            }
+        }
+        Library lb = new Library();
+        lb.DisplayBooksOnLoan();
+    }
 }
