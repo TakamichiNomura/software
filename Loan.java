@@ -5,7 +5,7 @@ import java.util.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Loan<Book>
+public class Loan
 {
     int catalogueNumber;
     private Book book;
@@ -33,8 +33,7 @@ public class Loan<Book>
     }
     public void CheckBook(int catalogueNumber,String author,String title){
         checklist = new LinkedList<Book>();
-        book = new Book(author,title);
-        Iterator<Book> bookit = book.bklist.iterator();
+        Iterator<Book> bookit = this.book.bklist.iterator();
         Iterator<Book> loanit = booklist.iterator();
         while(bookit.hasNext()){
             Book bkit = bookit.next();
