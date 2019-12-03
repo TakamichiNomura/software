@@ -22,12 +22,18 @@ public class MyFrame extends JFrame
         public MyPanel(){
             this.setLayout(new FlowLayout());
             borrowerre = new JButton("사용자 등록");
-            borrowerre.addMouseListener(new MyListener(borrowerre));
+            borrowerre.addMouseListener(new MyListener());
             bookre = new JButton("책 등록");
+            borrowerre.addMouseListener(new MyListener());
             loanbook = new JButton("대출");
+            borrowerre.addMouseListener(new MyListener());
             returnbook = new JButton("반납");
+            borrowerre.addMouseListener(new MyListener());
             InLoan = new JButton("대출중");
+            borrowerre.addMouseListener(new MyListener());
             LoanAva = new JButton("대출 가능");
+            borrowerre.addMouseListener(new MyListener());
+            
             this.add(borrowerre);
             this.add(bookre);
             this.add(loanbook);

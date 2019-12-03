@@ -9,11 +9,24 @@ import java.awt.event.*;
  */
 public class MyListener extends MouseAdapter
 {
-    JButton button;
-    public MyListener(JButton bt){
-        this.button = bt;
+    MyFrame frame;
+    public MyListener(){
+        frame = new MyFrame();
     }
     public void mouseClicked(MouseEvent e){
         JButton bb = (JButton)e.getSource();
+        if(bb.equals(frame.borrowerre)){
+            
+        }else if(bb.equals(frame.bookre)){
+            
+        }else if(bb.equals(frame.loanbook)){
+            
+        }else if(bb.equals(frame.returnbook)){
+            
+        }else if(bb.equals(frame.InLoan)){
+            
+        }else if(bb.equals(frame.LoanAva)){
+            
+        }
     }
 }
