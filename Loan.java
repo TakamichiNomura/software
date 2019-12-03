@@ -9,6 +9,7 @@ public class Loan
 {
     int catalogueNumber;
     private Book book;
+    String Borrower;
     LinkedList<Book> checklist;
     LinkedList<Book> booklist;
     public Loan(){}

@@ -8,17 +8,9 @@ import java.util.*;
 public class Library
 {
     private String name;
-    TreeSet<Book> books;
-    static TreeSet<Borrower> borrowers;
-    Book book;
     public Library(){}
     public Library(String name){
         this.name = name;
-    }
-
-    public Library(int catalogueNumber,String title,String auther){
-        book = new Book(catalogueNumber,auther,title);
-        books = new TreeSet<Book>();
     }
 
     public void RegisterOneBorrower(String name){
