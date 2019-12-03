@@ -16,8 +16,8 @@ public class Library
         this.name = name;
     }
 
-    public Library(int catalogueNumber,String title,String auther){
-        book = new Book(catalogueNumber,auther,title);
+    public Library(int catalogueNumber,String title,String author){
+        book = new Book(catalogueNumber,author,title);
         books = new TreeSet<Book>();
     }
 
