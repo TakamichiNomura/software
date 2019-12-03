@@ -59,7 +59,7 @@ public class Book
         while(iterator.hasNext()){
             String dish = iterator.next().toString();
             if(this.title.equals(dish)){
-                System.out.println("이 책은 이미 등록되고 있습니다.");
+                System.out.println("이 책은 이미 등록되어 있습니다.");
                 break;
             }
         }   
@@ -73,4 +73,12 @@ public class Book
         bklist.add(catalogueNumber,bk);
         System.out.println("등록되었습니다");
     }
+    
+    public void NewBookAdd(String author,String title){
+        Book book = new Book(author,title);
+        books.add(book);
+        Book bk = new Book(author,title);
+        System.out.println("신청완료!");
+    }
+    
 }
