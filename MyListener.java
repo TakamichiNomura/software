@@ -11,10 +11,10 @@ public class MyListener extends MouseAdapter
 {
     MyFrame frame;
     public MyListener(){
-        frame = new MyFrame();
     }
     public void mouseClicked(MouseEvent e){
         JButton bb = (JButton)e.getSource();
+        frame = new MyFrame();
         if(bb.equals(frame.borrowerre)){
             
         }else if(bb.equals(frame.bookre)){
