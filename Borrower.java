@@ -2,7 +2,7 @@ import java.util.*;
 /**
  * Write a description of class Borrower here.
  *
- * @author (노무라 타카미치,카리야 노부타카,이 제훈,오타 오아키)
+ * @author (노무라 타카미치,카리야 노부타카,유제훈,오타 오아키)
  * @version (2019/11/29)
  */
 public class Borrower
